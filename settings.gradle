@@ -1,2 +1,2 @@
-rootProject.name='Competitive Programming Arena'
+rootProject.name='competitive-programming-arena-android'
 include ':app'
