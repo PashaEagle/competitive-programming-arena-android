@@ -1,0 +1,2 @@
+rootProject.name='Competitive Programming Arena'
+include ':app'
