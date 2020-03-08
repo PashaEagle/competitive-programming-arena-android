@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Competitive Programming Arena</string>
+
+    <string name="welcome_message">Welcome to the Competitive Programming Arena!\n Sign in below</string>
+
+    <string name="login_url">http://192.168.1.109:7777/api/auth/login</string>
+    <string name="register_url">http://192.168.1.109:7777/api/auth/register</string>
 </resources>

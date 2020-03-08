@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onButtonClick(View v) throws JSONException {
+
+
+    public void onButtonRegisterClick(View v) throws JSONException {
 
         final TextView label = (TextView) findViewById(R.id.textView);
         final EditText editUsername = (EditText) findViewById(R.id.editUsername);
