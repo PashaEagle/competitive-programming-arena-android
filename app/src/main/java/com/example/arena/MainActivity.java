@@ -1,69 +1,80 @@
 package com.example.arena;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import com.example.arena.fragement.AccountFragment;
+import com.example.arena.fragement.RankFragment;
+import com.example.arena.fragement.SettingsFragment;
+import com.example.arena.singleton.UserSession;
+import com.google.android.material.navigation.NavigationView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_account);
+        }
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.nav_account:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
+                break;
 
+            case R.id.nav_rank:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RankFragment()).commit();
+                break;
 
-    public void onButtonRegisterClick(View v) throws JSONException {
+            case R.id.nav_settings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
+                break;
 
-        final TextView label = (TextView) findViewById(R.id.textView);
-        final EditText editUsername = (EditText) findViewById(R.id.editUsername);
-        final EditText editPassword = (EditText) findViewById(R.id.editPassword);
-        label.setText("Clicked");
+            case R.id.nav_info:
+                Toast.makeText(this, "By Pasha Kolesnyk", Toast.LENGTH_SHORT);
+                break;
+        }
 
-// ...
+        drawer.closeDrawer(GravityCompat.START);
 
-// Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://192.168.1.109:7777/api/auth/login";
-        JSONObject jsonBody = new JSONObject();
+        return true;
+    }
 
-        jsonBody.put("username", editUsername.getText().toString());
-        jsonBody.put("password", editPassword.getText().toString());
-
-// Request a string response from the provided URL.
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, jsonBody,
-
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                        label.setText("Response is: " + response);
-                    }
-                },
-
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                        label.setText("That didn't work!");
-                    }
-                });
-
-// Add the request to the RequestQueue.
-        queue.add(jsonObjectRequest);
+    @Override
+    public void onBackPressed() {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
