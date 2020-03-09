@@ -1,6 +1,6 @@
 package com.example.arena.singleton;
 
-import com.example.arena.dto.UserDto;
+import com.example.arena.dto.user.UserDto;
 
 public final class UserSession {
 

@@ -1,8 +1,9 @@
-package com.example.arena.dto;
+package com.example.arena.dto.user;
 
 import com.example.arena.constant.Role;
 
-import lombok.AccessLevel;
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,4 +21,6 @@ public class UserDto {
     private Integer age;
     private String group;
     private Role role;
+    private LocalDateTime lastActiveAt;
+    private String codeforcesUsername;
 }

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.arena.dto.UserDto;
+import com.example.arena.dto.user.UserDto;
 import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;
 

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.StrictMode;
 import android.widget.Toast;
 
-import com.example.arena.dto.UserDto;
+import com.example.arena.dto.user.UserDto;
 import com.example.arena.integration.dto.LoginHttpRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -35,6 +35,27 @@ public class CoreCommunicationService {
 
     @SneakyThrows
     public UserDto sendLoginRequest(String url, String username, String password) {
+
+        LoginHttpRequest request = LoginHttpRequest.builder().username(username).password(password).build();
+        try {
+            ResponseEntity<UserDto> response = restTemplate.postForEntity(url, request, UserDto.class);
+            System.out.println(response.getStatusCode());
+            System.out.println(response.getBody());
+
+            return response.getBody();
+        } catch (Exception e) {
+            System.out.println("Error when sending login request. Message = " + e.getMessage());
+            if (e.getMessage().contains("400")) {
+                Toast.makeText(context, "Invalid account name or password", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Error when sending request to login..", Toast.LENGTH_SHORT).show();
+            }
+            return null;
+        }
+    }
+
+    @SneakyThrows
+    public boolean sendRegisterRequest(String url, UserDto userDto) {
 
         LoginHttpRequest request = LoginHttpRequest.builder().username(username).password(password).build();
         try {
