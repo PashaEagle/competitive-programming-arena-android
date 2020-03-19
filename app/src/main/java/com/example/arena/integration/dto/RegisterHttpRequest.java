@@ -1,24 +1,22 @@
-package com.example.arena.dto.user;
+package com.example.arena.integration.dto;
 
-import com.example.arena.constant.Role;
-
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
-public class UserDto {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public class RegisterHttpRequest {
 
     private String username;
     private String password;
     private String fullName;
     private Integer age;
     private String group;
-    private Role role;
-    private Long lastActiveAt;
-    private String codeForcesUsername;
 }

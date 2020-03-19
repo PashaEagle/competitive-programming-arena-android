@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import com.example.arena.dto.user.UserDto;
 import com.example.arena.integration.dto.LoginHttpRequest;
+import com.example.arena.integration.dto.RegisterHttpRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.http.ResponseEntity;
@@ -36,7 +37,10 @@ public class CoreCommunicationService {
     @SneakyThrows
     public UserDto sendLoginRequest(String url, String username, String password) {
 
-        LoginHttpRequest request = LoginHttpRequest.builder().username(username).password(password).build();
+        LoginHttpRequest request = LoginHttpRequest.builder()
+                .username(username)
+                .password(password)
+                .build();
         try {
             ResponseEntity<UserDto> response = restTemplate.postForEntity(url, request, UserDto.class);
             System.out.println(response.getStatusCode());
@@ -57,9 +61,15 @@ public class CoreCommunicationService {
     @SneakyThrows
     public boolean sendRegisterRequest(String url, UserDto userDto) {
 
-        LoginHttpRequest request = LoginHttpRequest.builder().username(username).password(password).build();
+        RegisterHttpRequest request = RegisterHttpRequest.builder()
+                .username(userDto.getUsername())
+                .password(userDto.getPassword())
+                .age(userDto.getAge())
+                .fullName(userDto.getFullName())
+                .group(userDto.getGroup())
+                .build();
         try {
-            ResponseEntity<UserDto> response = restTemplate.postForEntity(url, request, UserDto.class);
+            ResponseEntity<Boolean> response = restTemplate.postForEntity(url, request, Boolean.class);
             System.out.println(response.getStatusCode());
             System.out.println(response.getBody());
 
@@ -71,7 +81,7 @@ public class CoreCommunicationService {
             } else {
                 Toast.makeText(context, "Error when sending request to login..", Toast.LENGTH_SHORT).show();
             }
-            return null;
+            return false;
         }
     }
 }
