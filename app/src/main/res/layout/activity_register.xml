@@ -8,70 +8,75 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="212dp"
-        android:layout_height="55dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="118dp"
         android:onClick="onButtonRegisterActivityClick"
         android:text="Register"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="557dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/editGroup"
+        app:layout_constraintStart_toStartOf="@+id/editGroup"
+        app:layout_constraintTop_toBottomOf="@+id/editGroup" />
 
     <EditText
         android:id="@+id/editPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="163dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editFullname"
+        app:layout_constraintStart_toStartOf="@+id/editUsername"
+        app:layout_constraintTop_toBottomOf="@+id/editUsername" />
 
     <EditText
         android:id="@+id/editAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
         android:ems="10"
         android:hint="age"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editGroup"
+        app:layout_constraintStart_toStartOf="@+id/editFullname"
+        app:layout_constraintTop_toBottomOf="@+id/editFullname" />
 
     <EditText
         android:id="@+id/editGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
         android:ems="10"
         android:hint="group"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="372dp" />
-
-    <EditText
-        android:id="@+id/editCFUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="codeforces username"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/editAge"
+        app:layout_constraintTop_toBottomOf="@+id/editAge" />
 
     <EditText
         android:id="@+id/editFullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="full name"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="236dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editAge"
+        app:layout_constraintStart_toStartOf="@+id/editPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
     <EditText
         android:id="@+id/editUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="username"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="94dp" />
+        app:layout_constraintBottom_toTopOf="@+id/editPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
