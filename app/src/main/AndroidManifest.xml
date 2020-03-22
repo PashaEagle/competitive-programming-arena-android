@@ -13,33 +13,38 @@
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name=".LoginActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".RegisterActivity">
             <intent-filter>
                 <action android:name=".RegisterActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name=".MainActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".EditAccountActivity">
+            <action android:name=".EditAccountActivity" />
 
+            <category android:name="android.intent.category.DEFAULT" />
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

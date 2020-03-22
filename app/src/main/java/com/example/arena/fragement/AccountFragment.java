@@ -1,13 +1,19 @@
 package com.example.arena.fragement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.arena.LoginActivity;
 import com.example.arena.R;
+import com.example.arena.dto.user.UserDto;
 import com.example.arena.singleton.UserSession;
+
+import org.json.JSONException;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +25,7 @@ public class AccountFragment extends Fragment {
     private TextView tFullnameValue;
     private TextView tAgeValue;
     private TextView tGroupValue;
+    private TextView tCodeForcesUsernameValue;
 
     @Nullable
     @Override
@@ -34,10 +41,13 @@ public class AccountFragment extends Fragment {
         tFullnameValue = view.findViewById(R.id.tFullnameValue);
         tAgeValue = view.findViewById(R.id.tAgeValue);
         tGroupValue = view.findViewById(R.id.tGroupValue);
+        tCodeForcesUsernameValue = view.findViewById(R.id.tCodeforcesUsernameValue);
 
         tUsernameValue.setText(UserSession.loggedUser.getUsername()+"");
         tFullnameValue.setText(UserSession.loggedUser.getFullName()+"");
         tAgeValue.setText(UserSession.loggedUser.getAge()+"");
         tGroupValue.setText(UserSession.loggedUser.getGroup()+"");
+        tCodeForcesUsernameValue.setText(UserSession.loggedUser.getCodeForcesUsername());
     }
+
 }

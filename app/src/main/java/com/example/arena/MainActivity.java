@@ -1,15 +1,21 @@
 package com.example.arena;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.arena.dto.user.UserDto;
 import com.example.arena.fragement.AccountFragment;
 import com.example.arena.fragement.RankFragment;
 import com.example.arena.fragement.SettingsFragment;
+import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;
 import com.google.android.material.navigation.NavigationView;
+
+import org.json.JSONException;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -76,5 +82,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+
+    public void onButtonEditAccountClick(View v) throws JSONException {
+
+
+        Intent intent = new Intent(".EditAccountActivity");
+        startActivity(intent);
     }
 }

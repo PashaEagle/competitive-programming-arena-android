@@ -1,9 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources
+    [
+        <!ENTITY core_host "http://192.168.1.109:7777">
+        <!ENTITY author "MrGreen">
+    ]
+>
+
 <resources>
     <string name="app_name">Competitive Programming Arena</string>
 
     <string name="welcome_message">Welcome to the Competitive Programming Arena!\n Sign in below</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="login_url">http://192.168.1.109:7777/api/auth/login</string>
-    <string name="register_url">http://192.168.1.109:7777/api/auth/register</string>
+    <string name="login_url">&core_host;/api/auth/login</string>
+    <string name="register_url">&core_host;/api/auth/register</string>
+    <string name="update_account_data_url">&core_host;/api/account/update</string>
 </resources>
