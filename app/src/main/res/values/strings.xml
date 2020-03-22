@@ -8,6 +8,7 @@
 <resources>
     <string name="app_name">Competitive Programming Arena</string>
 
+    <string name="empty_field_hint">not set</string>
     <string name="welcome_message">Welcome to the Competitive Programming Arena!\n Sign in below</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

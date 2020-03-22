@@ -23,11 +23,11 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="Edit account"
-            android:textSize="30dp" />
+            android:textSize="36sp" />
 
         <ScrollView
-            android:layout_width="416dp"
-            android:layout_height="628dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,6 +37,20 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10">
+
+                        <TextView
+                            android:id="@+id/tEditPersonalData"
+                            android:layout_width="159dp"
+                            android:layout_height="wrap_content"
+                            android:text="Personal data:"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -56,8 +70,8 @@
                             android:editable="false"
                             android:ems="10"
                             android:enabled="false"
+                            android:hint="@string/empty_field_hint"
                             android:inputType="textPersonName"
-                            android:text="null"
                             android:textAlignment="viewStart" />
 
                     </TableRow>
@@ -78,112 +92,185 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:inputType="textPersonName"
-                            android:text="null" />
+                            android:hint="@string/empty_field_hint"
+                            android:inputType="textPersonName" />
 
                     </TableRow>
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tChangeAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Age:"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/editChangeAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/empty_field_hint"
+                            android:inputType="number" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tChangeGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Group:"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/editChangeGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/empty_field_hint"
+                            android:inputType="textPersonName" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20">
+
+                        <TextView
+                            android:id="@+id/tEditPasswordTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Password:"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/tChangePasswordOld"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Old password:"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/editChangeOldPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/empty_field_hint"
+                            android:inputType="textPersonName" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/tChangePasswordNew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="New password:"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/editChangeNewPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/empty_field_hint"
+                            android:inputType="textPersonName" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20">
+
+
+                        <TextView
+                            android:id="@+id/tEditLinkedAccountsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Linked accounts:"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/tChangeCodeforcesUsername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Codeforces:"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/editChangeCodeforcesUsername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/empty_field_hint"
+                            android:inputType="textPersonName" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:id="@+id/tChangeCodewarsUsername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Codewars:"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/editChangeCodewarsUsername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="@string/empty_field_hint"
+                            android:inputType="textPersonName" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                    </TableRow>
+
+
                 </TableLayout>
             </LinearLayout>
         </ScrollView>
 
+        <Button
+            android:id="@+id/bSaveChanges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:text="Save changes" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/bSaveChanges"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Save changes"
-        tools:layout_editor_absoluteX="101dp"
-        tools:layout_editor_absoluteY="634dp" />
-
-    <EditText
-        android:id="@+id/editChangeCodeforcesUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="null"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="425dp" />
-
-    <EditText
-        android:id="@+id/editChangeGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="null"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="290dp" />
-
-    <EditText
-        android:id="@+id/editChangeCodewarsUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="null"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="486dp" />
-
-    <EditText
-        android:id="@+id/editChangeAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"
-        android:text="null"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="235dp" />
-
-    <TextView
-        android:id="@+id/tChangeCodeforcesUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Codeforces:"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="437dp" />
-
-    <TextView
-        android:id="@+id/tChangeCodewarsUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Codewars:"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="498dp" />
-
-    <TextView
-        android:id="@+id/tEditLinkedAccountsTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Linked accounts:"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="353dp" />
-
-    <TextView
-        android:id="@+id/tChangeGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Group:"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="299dp" />
-
-    <TextView
-        android:id="@+id/tChangeAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age:"
-        android:textSize="18dp"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="243dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
