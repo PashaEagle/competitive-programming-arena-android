@@ -22,254 +22,159 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Edit account"
+            android:text="Edit account info"
             android:textSize="36sp" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TableLayout
+                <TextView
+                    android:id="@+id/tEditPersonalData"
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:text="Personal data:"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputChangeEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10">
-
-                        <TextView
-                            android:id="@+id/tEditPersonalData"
-                            android:layout_width="159dp"
-                            android:layout_height="wrap_content"
-                            android:text="Personal data:"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/tChangeUsername"
-                            android:layout_width="126dp"
-                            android:layout_height="wrap_content"
-                            android:text="Username:"
-                            android:textSize="18dp" />
-
-                        <EditText
-                            android:id="@+id/editChangeUsername"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:editable="false"
-                            android:ems="10"
-                            android:enabled="false"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="textPersonName"
-                            android:textAlignment="viewStart" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/tChangeFullname"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Full name:"
-                            android:textSize="18dp" />
-
-                        <EditText
-                            android:id="@+id/editChangeFullname"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="textPersonName" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/tChangeAge"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Age:"
-                            android:textSize="18dp" />
-
-                        <EditText
-                            android:id="@+id/editChangeAge"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="number" />
-
-                    </TableRow>
-
-                    <TableRow
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/tChangeGroup"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Group:"
-                            android:textSize="18dp" />
-
-                        <EditText
-                            android:id="@+id/editChangeGroup"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="textPersonName" />
-
-                    </TableRow>
-
-                    <TableRow
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20">
+                        android:enabled="false"
+                        android:hint="Email" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                        <TextView
-                            android:id="@+id/tEditPasswordTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Password:"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </TableRow>
 
-                    <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputChangeUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:hint="Username"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <TextView
-                            android:id="@+id/tChangePasswordOld"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Old password:"
-                            android:textSize="18dp" />
-
-                        <EditText
-                            android:id="@+id/editChangeOldPassword"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="textPersonName" />
-                    </TableRow>
-
-                    <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputChangeFullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:hint="Full name"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <TextView
-                            android:id="@+id/tChangePasswordNew"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="New password:"
-                            android:textSize="18dp" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputChangeAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
 
-                        <EditText
-                            android:id="@+id/editChangeNewPassword"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="textPersonName" />
-                    </TableRow>
-
-                    <TableRow
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="20">
+                        android:layout_height="wrap_content"
+                        android:hint="Age"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <TextView
-                            android:id="@+id/tEditLinkedAccountsTitle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Linked accounts:"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-                    </TableRow>
+                <Spinner
+                    android:id="@+id/spinnerChangeGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dialog" />
 
-                    <TableRow
+                <TextView
+                    android:id="@+id/tEditPasswordTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:text="Password:"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputOldPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:hint="Old password"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <TextView
-                            android:id="@+id/tChangeCodeforcesUsername"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Codeforces:"
-                            android:textSize="18dp" />
-
-                        <EditText
-                            android:id="@+id/editChangeCodeforcesUsername"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="textPersonName" />
-                    </TableRow>
-
-                    <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputNewPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:hint="New password"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                        <TextView
-                            android:id="@+id/tChangeCodewarsUsername"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Codewars:"
-                            android:textSize="18dp" />
+                <TextView
+                    android:id="@+id/tEditLinkedAccountsTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:text="Linked accounts:"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                        <EditText
-                            android:id="@+id/editChangeCodewarsUsername"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:ems="10"
-                            android:hint="@string/empty_field_hint"
-                            android:inputType="textPersonName" />
-                    </TableRow>
 
-                    <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputChangeCodeforcesUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content"
+                        android:hint="Codeforces handle" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                    </TableRow>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputChangeCodewarsUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="true">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Codewars username" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-                </TableLayout>
             </LinearLayout>
         </ScrollView>
-
-        <Button
-            android:id="@+id/bSaveChanges"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_span="2"
-            android:text="Save changes" />
 
     </LinearLayout>
 

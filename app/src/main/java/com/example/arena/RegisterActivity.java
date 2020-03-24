@@ -16,11 +16,11 @@ public class RegisterActivity extends AppCompatActivity {
 
     private CoreCommunicationService coreCommunicationService;
 
-    private EditText editUsername;
-    private EditText editPassword;
-    private EditText editFullname;
-    private EditText editAge;
-    private EditText editGroup;
+    private EditText editRegisterUsername;
+    private EditText editRegisterPassword;
+    private EditText editRegisterFullname;
+    private EditText editRegisterAge;
+    private EditText editRegisterGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,21 +29,21 @@ public class RegisterActivity extends AppCompatActivity {
 
         this.coreCommunicationService = new CoreCommunicationService(RegisterActivity.this);
 
-        editUsername = findViewById(R.id.editRegisterUsername);
-        editPassword = findViewById(R.id.editRegisterPassword);
-        editFullname = findViewById(R.id.editFullname);
-        editAge = findViewById(R.id.editRegisterAge);
-        editGroup = findViewById(R.id.editRegisterGroup);
+        editRegisterUsername = findViewById(R.id.editRegisterUsername);
+        editRegisterPassword = findViewById(R.id.editRegisterPassword);
+        editRegisterFullname = findViewById(R.id.editRegisterFullname);
+        editRegisterAge = findViewById(R.id.editRegisterAge);
+        editRegisterGroup = findViewById(R.id.editRegisterGroup);
     }
 
     public void onButtonRegisterActivityClick(View v) {
 
         String url = getString(R.string.register_url);
-        String username = editUsername.getText().toString();
-        String password = editPassword.getText().toString();
-        String fullName = editFullname.getText().toString();
-        Integer age = Integer.parseInt(editAge.getText().toString());
-        String group = editGroup.getText().toString();
+        String username = editRegisterUsername.getText().toString();
+        String password = editRegisterPassword.getText().toString();
+        String fullName = editRegisterFullname.getText().toString();
+        Integer age = Integer.parseInt(editRegisterAge.getText().toString());
+        String group = editRegisterGroup.getText().toString();
 
         UserDto userDto = UserDto.builder()
                 .username(username)

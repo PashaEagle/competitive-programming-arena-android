@@ -15,4 +15,14 @@
     <string name="login_url">&core_host;/api/auth/login</string>
     <string name="register_url">&core_host;/api/auth/register</string>
     <string name="update_account_data_url">&core_host;/api/account/update</string>
+
+
+
+
+    <string-array name="numbers">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+    </string-array>
 </resources>

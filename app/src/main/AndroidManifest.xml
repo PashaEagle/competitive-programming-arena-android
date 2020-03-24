@@ -41,9 +41,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".EditAccountActivity">
+            <intent-filter>
             <action android:name=".EditAccountActivity" />
 
             <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 
