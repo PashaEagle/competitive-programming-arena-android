@@ -1,19 +1,14 @@
 package com.example.arena.fragement;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.arena.LoginActivity;
+import com.example.arena.MainActivity;
 import com.example.arena.R;
-import com.example.arena.dto.user.UserDto;
 import com.example.arena.singleton.UserSession;
-
-import org.json.JSONException;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +27,15 @@ public class AccountFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_account, container, false);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        ((MainActivity) getActivity())
+                .setActionBarTitle("My account");
+        updateUI();
     }
 
     @Override
@@ -43,11 +47,19 @@ public class AccountFragment extends Fragment {
         tGroupValue = view.findViewById(R.id.tGroupValue);
         tCodeForcesUsernameValue = view.findViewById(R.id.tCodeforcesUsernameValue);
 
-        tUsernameValue.setText(UserSession.loggedUser.getUsername()+"");
-        tFullnameValue.setText(UserSession.loggedUser.getFullName()+"");
-        tAgeValue.setText(UserSession.loggedUser.getAge()+"");
-        tGroupValue.setText(UserSession.loggedUser.getGroup()+"");
+        tUsernameValue.setText(UserSession.loggedUser.getUsername() + "");
+        tFullnameValue.setText(UserSession.loggedUser.getFullName() + "");
+        tAgeValue.setText(UserSession.loggedUser.getAge() + "");
+        tGroupValue.setText(UserSession.loggedUser.getGroup() + "");
         tCodeForcesUsernameValue.setText(UserSession.loggedUser.getCodeForcesUsername());
     }
 
+    public void updateUI() {
+
+        tUsernameValue.setText(UserSession.loggedUser.getUsername());
+        tFullnameValue.setText(UserSession.loggedUser.getFullName());
+        tAgeValue.setText(UserSession.loggedUser.getAge().toString());
+        tGroupValue.setText(UserSession.loggedUser.getGroup());
+        tCodeForcesUsernameValue.setText(UserSession.loggedUser.getCodeForcesUsername());
+    }
 }

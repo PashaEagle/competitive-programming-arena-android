@@ -3,12 +3,13 @@ package com.example.arena;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.arena.constant.Role;
 import com.example.arena.dto.user.UserDto;
 import com.example.arena.integration.CoreCommunicationService;
+import com.google.android.material.textfield.TextInputLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,11 +17,12 @@ public class RegisterActivity extends AppCompatActivity {
 
     private CoreCommunicationService coreCommunicationService;
 
-    private EditText editRegisterUsername;
-    private EditText editRegisterPassword;
-    private EditText editRegisterFullname;
-    private EditText editRegisterAge;
-    private EditText editRegisterGroup;
+    private TextInputLayout textInputRegisterEmail;
+    private TextInputLayout textInputRegisterUsername;
+    private TextInputLayout textInputRegisterFullname;
+    private TextInputLayout textInputRegisterPassword;
+    private TextInputLayout textInputRegisterAge;
+    private Spinner spinnerRegisterGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +31,25 @@ public class RegisterActivity extends AppCompatActivity {
 
         this.coreCommunicationService = new CoreCommunicationService(RegisterActivity.this);
 
-        editRegisterUsername = findViewById(R.id.editRegisterUsername);
-        editRegisterPassword = findViewById(R.id.editRegisterPassword);
-        editRegisterFullname = findViewById(R.id.editRegisterFullname);
-        editRegisterAge = findViewById(R.id.editRegisterAge);
-        editRegisterGroup = findViewById(R.id.editRegisterGroup);
+        textInputRegisterEmail = findViewById(R.id.textInputRegisterEmail);
+        textInputRegisterUsername = findViewById(R.id.textInputRegisterUsername);
+        textInputRegisterFullname = findViewById(R.id.textInputRegisterFullname);
+        textInputRegisterPassword = findViewById(R.id.textInputRegisterPassword);
+        textInputRegisterAge = findViewById(R.id.textInputRegisterAge);
+        spinnerRegisterGroup = findViewById(R.id.spinnerRegisterGroup);
     }
 
     public void onButtonRegisterActivityClick(View v) {
 
-        String url = getString(R.string.register_url);
-        String username = editRegisterUsername.getText().toString();
-        String password = editRegisterPassword.getText().toString();
-        String fullName = editRegisterFullname.getText().toString();
-        Integer age = Integer.parseInt(editRegisterAge.getText().toString());
-        String group = editRegisterGroup.getText().toString();
+        String email = textInputRegisterEmail.getEditText().getText().toString();
+        String username = textInputRegisterUsername.getEditText().getText().toString();
+        String fullName = textInputRegisterFullname.getEditText().getText().toString();
+        String password = textInputRegisterPassword.getEditText().getText().toString();
+        Integer age = Integer.parseInt(textInputRegisterAge.getEditText().getText().toString());
+        String group = spinnerRegisterGroup.getSelectedItem().toString();
 
         UserDto userDto = UserDto.builder()
+                .email(email)
                 .username(username)
                 .password(password)
                 .age(age)
@@ -54,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .role(Role.ROLE_USER)
                 .build();
 
-        boolean success = coreCommunicationService.sendRegisterRequest(url, userDto);
+        boolean success = coreCommunicationService.sendRegisterRequest(userDto);
 
         if (success) {
             Toast.makeText(this, "Registration success. You can now login ", Toast.LENGTH_SHORT).show();

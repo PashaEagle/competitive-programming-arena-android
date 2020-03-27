@@ -6,23 +6,33 @@
 >
 
 <resources>
+    //App name
     <string name="app_name">Competitive Programming Arena</string>
 
+    //Action bar titles
+    <string name="edit_account_activity_title">Edit account</string>
+
+    //Urls
+    <string name="login_url">&core_host;/api/auth/login</string>
+    <string name="register_url">&core_host;/api/auth/register</string>
+    <string name="update_account_data_url">&core_host;/api/user/update</string>
+    <string name="check_username_exists_url">&core_host;/api/user/exists/username</string>
+    <string name="check_codeforces_username_url">&core_host;/api/codeforces/exists/username</string>
+
+    //Other
     <string name="empty_field_hint">not set</string>
     <string name="welcome_message">Welcome to the Competitive Programming Arena!\n Sign in below</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="login_url">&core_host;/api/auth/login</string>
-    <string name="register_url">&core_host;/api/auth/register</string>
-    <string name="update_account_data_url">&core_host;/api/account/update</string>
 
 
 
 
     <string-array name="numbers">
-        <item>One</item>
-        <item>Two</item>
-        <item>Three</item>
-        <item>Four</item>
+        <item>PI-162</item>
+        <item>PI-172</item>
+        <item>PI-182</item>
+        <item>PI-192</item>
     </string-array>
+
 </resources>

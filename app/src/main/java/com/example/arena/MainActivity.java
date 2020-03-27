@@ -2,20 +2,15 @@ package com.example.arena;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.arena.dto.user.UserDto;
 import com.example.arena.fragement.AccountFragment;
 import com.example.arena.fragement.RankFragment;
 import com.example.arena.fragement.SettingsFragment;
-import com.example.arena.integration.CoreCommunicationService;
-import com.example.arena.singleton.UserSession;
 import com.google.android.material.navigation.NavigationView;
-
-import org.json.JSONException;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -48,6 +43,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_account);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.editAccountMainMenuButton:
+                onButtonEditAccountClick();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -85,10 +96,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    public void onButtonEditAccountClick(View v) throws JSONException {
-
+    public void onButtonEditAccountClick() {
 
         Intent intent = new Intent(".EditAccountActivity");
         startActivity(intent);
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 }

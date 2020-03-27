@@ -14,6 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class RegisterHttpRequest {
 
+    private String email;
     private String username;
     private String password;
     private String fullName;

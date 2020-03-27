@@ -9,21 +9,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tEditAccountTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Edit account info"
-            android:textSize="36sp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -32,14 +24,17 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
 
                 <TextView
                     android:id="@+id/tEditPersonalData"
-                    android:layout_width="159dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10sp"
+                    android:layout_marginTop="10dp"
                     android:text="Personal data:"
+                    android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -48,12 +43,20 @@
                     android:id="@+id/textInputChangeEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:focusedByDefault="false"
+                    android:defaultFocusHighlightEnabled="false"
                     app:errorEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
-                        android:hint="Email" />
+                        android:focusable="false"
+                        android:hint="Email"
+                        android:text="example@gmail.com" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -61,12 +64,14 @@
                     android:id="@+id/textInputChangeUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:errorEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Username"
-                        android:inputType="text"/>
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -74,12 +79,14 @@
                     android:id="@+id/textInputChangeFullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:errorEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Full name"
-                        android:inputType="text"/>
+                        android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -87,6 +94,7 @@
                     android:id="@+id/textInputChangeAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -97,18 +105,27 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
+                <TextView
+                    android:id="@+id/tChangeGroupTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Group" />
+
                 <Spinner
                     android:id="@+id/spinnerChangeGroup"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
+                    android:entries="@array/numbers"
                     android:spinnerMode="dialog" />
 
                 <TextView
                     android:id="@+id/tEditPasswordTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10sp"
+                    android:layout_marginTop="10dp"
                     android:text="Password:"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -117,12 +134,15 @@
                     android:id="@+id/textInputOldPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:errorEnabled="true">
+                    android:layout_marginTop="10dp"
+                    app:errorEnabled="true"
+                    app:passwordToggleEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Old password"
-                        android:inputType="textPassword"/>
+                        android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -130,21 +150,25 @@
                     android:id="@+id/textInputNewPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:errorEnabled="true">
+                    android:layout_marginTop="10dp"
+                    app:errorEnabled="true"
+                    app:passwordToggleEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="New password"
-                        android:inputType="textPassword"/>
+                        android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <TextView
                     android:id="@+id/tEditLinkedAccountsTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10sp"
+                    android:layout_marginTop="10dp"
                     android:text="Linked accounts:"
+                    android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -153,11 +177,14 @@
                     android:id="@+id/textInputChangeCodeforcesUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:errorEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Codeforces handle" />
+                        android:hint="Codeforces handle"
+                        android:inputType="text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -165,11 +192,14 @@
                     android:id="@+id/textInputChangeCodewarsUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     app:errorEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Codewars username" />
+                        android:hint="Codewars username"
+                        android:inputType="text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 

@@ -35,11 +35,10 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onButtonLoginClick(View v) throws JSONException {
 
-        String url = getString(R.string.login_url);
-        String username = editUsername.getText().toString();
+        String loginString = editUsername.getText().toString();
         String password = editPassword.getText().toString();
 
-        UserDto userDto = coreCommunicationService.sendLoginRequest(url, username, password);
+        UserDto userDto = coreCommunicationService.sendLoginRequest(loginString, password);
         if (userDto == null)
             return;
 
