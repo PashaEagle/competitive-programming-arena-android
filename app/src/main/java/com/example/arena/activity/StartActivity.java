@@ -1,10 +1,12 @@
-package com.example.arena;
+package com.example.arena.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.arena.R;
 
 public class StartActivity extends AppCompatActivity {
 

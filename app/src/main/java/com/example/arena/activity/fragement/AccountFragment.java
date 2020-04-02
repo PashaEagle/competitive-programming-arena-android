@@ -1,12 +1,16 @@
-package com.example.arena.fragement;
+package com.example.arena.activity.fragement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.arena.MainActivity;
+import com.example.arena.activity.MainActivity;
 import com.example.arena.R;
 import com.example.arena.singleton.UserSession;
 
@@ -22,12 +26,33 @@ public class AccountFragment extends Fragment {
     private TextView tGroupValue;
     private TextView tCodeForcesUsernameValue;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         return inflater.inflate(R.layout.fragment_account, container, false);
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.account_fragment_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.editAccountMainMenuButton:
+                onButtonEditAccountClick();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -40,6 +65,9 @@ public class AccountFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+        ((MainActivity) getActivity())
+                .setActionBarTitle("My account");
 
         tUsernameValue = view.findViewById(R.id.tUsernameValue);
         tFullnameValue = view.findViewById(R.id.tFullnameValue);
@@ -62,4 +90,10 @@ public class AccountFragment extends Fragment {
         tGroupValue.setText(UserSession.loggedUser.getGroup());
         tCodeForcesUsernameValue.setText(UserSession.loggedUser.getCodeForcesUsername());
     }
+
+    public void onButtonEditAccountClick() {
+        Intent intent = new Intent(".EditAccountActivity");
+        startActivity(intent);
+    }
+
 }

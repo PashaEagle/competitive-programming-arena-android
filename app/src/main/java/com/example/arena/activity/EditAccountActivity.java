@@ -1,4 +1,4 @@
-package com.example.arena;
+package com.example.arena.activity;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.arena.R;
 import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;
 import com.example.arena.validation.ValueValidator;
@@ -97,25 +98,25 @@ public class EditAccountActivity extends AppCompatActivity {
 
     public void updateUserSessionFields() {
 
-        if (!textInputChangeUsername.getEditText().getText().equals(UserSession.loggedUser.getUsername()))
+        if (!textInputChangeUsername.getEditText().getText().toString().equals(UserSession.loggedUser.getUsername()))
             UserSession.loggedUser.setUsername(textInputChangeUsername.getEditText().getText().toString());
 
-        if (!textInputChangeFullname.getEditText().getText().equals(UserSession.loggedUser.getFullName()))
+        if (!textInputChangeFullname.getEditText().getText().toString().equals(UserSession.loggedUser.getFullName()))
             UserSession.loggedUser.setFullName(textInputChangeFullname.getEditText().getText().toString());
 
-        if (!textInputChangeAge.getEditText().getText().equals(UserSession.loggedUser.getAge()))
+        if (!textInputChangeAge.getEditText().getText().toString().equals(UserSession.loggedUser.getAge()))
             UserSession.loggedUser.setAge(Integer.parseInt(textInputChangeAge.getEditText().getText().toString()));
 
         if (!spinnerChangeGroup.getSelectedItem().toString().equals(UserSession.loggedUser.getGroup()))
             UserSession.loggedUser.setGroup(spinnerChangeGroup.getSelectedItem().toString());
 
-        if (!textInputNewPassword.getEditText().getText().equals(UserSession.loggedUser.getPassword()))
+        if (!textInputNewPassword.getEditText().getText().toString().equals(UserSession.loggedUser.getPassword()) && textInputOldPassword.getEditText().getText().toString().equals(UserSession.loggedUser.getPassword()))
             UserSession.loggedUser.setPassword(textInputNewPassword.getEditText().getText().toString());
 
-        if (!textInputChangeCodeforcesUsername.getEditText().getText().equals(UserSession.loggedUser.getCodeForcesUsername()))
+        if (!textInputChangeCodeforcesUsername.getEditText().getText().toString().equals(UserSession.loggedUser.getCodeForcesUsername()))
             UserSession.loggedUser.setCodeForcesUsername(textInputChangeCodeforcesUsername.getEditText().getText().toString());
 
-        if (!textInputChangeCodewarsUsername.getEditText().getText().equals(UserSession.loggedUser.getCodeWarsUsername()))
+        if (!textInputChangeCodewarsUsername.getEditText().getText().toString().equals(UserSession.loggedUser.getCodeWarsUsername()))
             UserSession.loggedUser.setCodeWarsUsername(textInputChangeCodewarsUsername.getEditText().getText().toString());
     }
 
@@ -178,7 +179,7 @@ public class EditAccountActivity extends AppCompatActivity {
             valid = false;
         } else {
             String currentPassword = textInputOldPassword.getEditText().getText().toString();
-            String newPassword = textInputOldPassword.getEditText().getText().toString();
+            String newPassword = textInputNewPassword.getEditText().getText().toString();
 
             if (valueValidator.validateCurrentPassword(currentPassword))
                 textInputOldPassword.setError(null);

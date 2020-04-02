@@ -1,4 +1,4 @@
-package com.example.arena;
+package com.example.arena.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +7,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.arena.fragement.AccountFragment;
-import com.example.arena.fragement.RankFragment;
-import com.example.arena.fragement.SettingsFragment;
+import com.example.arena.R;
+import com.example.arena.entity.UserItem;
+import com.example.arena.activity.fragement.AccountFragment;
+import com.example.arena.activity.fragement.RankFragment;
+import com.example.arena.activity.fragement.SettingsFragment;
+import com.example.arena.entity.UserRankingAdapter;
+import com.example.arena.singleton.UserSession;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -18,6 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -43,22 +51,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_account);
         }
-    }
+        UserSession.allUsers = new ArrayList<>();
+        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username1", "Some other item"));
+        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username2", "Some other item"));
+        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username3", "Some other item"));
+        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username4", "Some other item"));
+        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username5", "Some other item"));
+        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username6", "Some other item"));
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.editAccountMainMenuButton:
-                onButtonEditAccountClick();
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -93,13 +93,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
-    }
-
-
-    public void onButtonEditAccountClick() {
-
-        Intent intent = new Intent(".EditAccountActivity");
-        startActivity(intent);
     }
 
     public void setActionBarTitle(String title) {

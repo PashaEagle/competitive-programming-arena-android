@@ -1,4 +1,4 @@
-package com.example.arena;
+package com.example.arena.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.arena.R;
 import com.example.arena.dto.user.UserDto;
 import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;

@@ -32,7 +32,7 @@ public class ValueValidator {
     }
 
     public boolean validateNewPassword(String newPassword) {
-        return newPassword.length() > 8;
+        return newPassword.length() >= 8;
     }
 
     public boolean validateCodeforcesUsername(String codeforcesUsername) {

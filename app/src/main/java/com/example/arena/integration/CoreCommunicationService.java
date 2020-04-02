@@ -68,6 +68,7 @@ public class CoreCommunicationService {
 
         String url = context.getString(R.string.register_url);
         RegisterHttpRequest request = RegisterHttpRequest.builder()
+                .email(userDto.getEmail())
                 .username(userDto.getUsername())
                 .password(userDto.getPassword())
                 .age(userDto.getAge())
@@ -81,11 +82,11 @@ public class CoreCommunicationService {
 
             return response.getBody();
         } catch (Exception e) {
-            System.out.println("Error when sending login request. Message = " + e.getMessage());
+            System.out.println("Error when sending register request. Message = " + e.getMessage());
             if (e.getMessage().contains("400")) {
                 Toast.makeText(context, "Invalid account name or password", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(context, "Error when sending request to login..", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Error when sending request to register..", Toast.LENGTH_SHORT).show();
             }
             return false;
         }
@@ -94,7 +95,7 @@ public class CoreCommunicationService {
     @SneakyThrows
     public boolean checkUserExistsByUsernameRequest(String username) {
 
-        String url = context.getString(R.string.check_username_exists_url) + "/" + username;
+        String url = context.getString(R.string.check_username_exists_url) + "?username=" + username;
         try {
             ResponseEntity<Boolean> response = restTemplate.getForEntity(url, Boolean.class);
             System.out.println(response.getStatusCode());
