@@ -17,6 +17,10 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import lombok.SneakyThrows;
 
 public class CoreCommunicationService {
@@ -106,6 +110,27 @@ public class CoreCommunicationService {
             System.out.println("Error when sending check user exists by username request. Message = " + e.getMessage());
             Toast.makeText(context, "Error when sending request to check user exists..", Toast.LENGTH_SHORT).show();
             return false;
+        }
+    }
+
+    @SneakyThrows
+    public ArrayList<UserDto> getAllUsersRequest() {
+
+        String url = context.getString(R.string.all_users_url);
+        try {
+            ResponseEntity<UserDto[]> response = restTemplate.exchange(
+                    url,
+                    HttpMethod.GET,
+                    null,
+                    UserDto[].class);
+            System.out.println(response.getStatusCode());
+            System.out.println(response.getBody());
+
+            return new ArrayList(Arrays.asList(response.getBody()));
+        } catch (Exception e) {
+            System.out.println("Error when sending request to get all users. Message = " + e.getMessage());
+            Toast.makeText(context, "Error when sending request to get all users..", Toast.LENGTH_SHORT).show();
+            return null;
         }
     }
 

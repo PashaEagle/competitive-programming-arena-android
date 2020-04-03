@@ -10,6 +10,9 @@ import lombok.Setter;
 public class UserItem {
 
     private int imageResource;
-    private String text1;
-    private String text2;
+    private int place;
+    private String username;
+    private String lastSeenTime;
+    private String group;
+    private String value;
 }

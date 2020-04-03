@@ -15,8 +15,10 @@
     //Urls
     <string name="login_url">&core_host;/api/auth/login</string>
     <string name="register_url">&core_host;/api/auth/register</string>
+    <string name="user_url">&core_host;/api/user</string>
+    <string name="all_users_url">&core_host;/api/user/all</string>
     <string name="update_account_data_url">&core_host;/api/user/update</string>
-    <string name="check_username_exists_url">&core_host;/api/user/exists/username</string>
+    <string name="check_username_exists_url">&core_host;/api/user/exists</string>
     <string name="check_codeforces_username_url">&core_host;/api/codeforces/exists/username</string>
 
     //Other

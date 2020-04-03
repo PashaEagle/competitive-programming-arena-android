@@ -10,17 +10,31 @@
         android:layout_height="match_parent"
         android:layout_margin="4dp">
 
+        <TextView
+            android:id="@+id/rankingUserItemPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="№"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/rankingUserItemImageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:padding="2dp"/>
+            android:layout_marginStart="30dp"
+            android:padding="2dp" />
+
 
         <TextView
-            android:id="@+id/rankingUserItemText1"
+            android:id="@+id/rankingUserItemUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Line 1"
+            android:text="username"
+            android:layout_marginStart="8dp"
             android:textColor="@color/cardview_dark_background"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -28,17 +42,37 @@
             android:layout_toEndOf="@id/rankingUserItemImageView"/>
 
         <TextView
-            android:id="@+id/rankingUserItemText2"
+            android:id="@+id/rankingUserItemLastSeenTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Line 2"
+            android:text="last seen time"
             android:textColor="@color/cardview_dark_background"
             android:textSize="15sp"
-            android:textStyle="bold"
-            android:layout_below="@id/rankingUserItemText1"
+            android:layout_below="@id/rankingUserItemUsername"
             android:layout_toEndOf="@id/rankingUserItemImageView"
             android:layout_marginStart="8dp"/>
 
+        <TextView
+            android:id="@+id/rankingUserItemGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="group"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="15sp"
+            android:layout_below="@id/rankingUserItemLastSeenTime"
+            android:layout_toEndOf="@id/rankingUserItemImageView"
+            android:layout_marginStart="8dp"/>
+
+        <TextView
+            android:id="@+id/rankingUserItemValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="value"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="15sp"
+            android:layout_below="@id/rankingUserItemGroup"
+            android:layout_toEndOf="@id/rankingUserItemImageView"
+            android:layout_marginStart="8dp"/>
 
     </RelativeLayout>
 

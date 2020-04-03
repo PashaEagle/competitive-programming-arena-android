@@ -19,14 +19,20 @@ public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.
 
     public static class UserRankingViewHolder extends RecyclerView.ViewHolder{
         public ImageView mImageView;
-        public TextView mTextView1;
-        public TextView mTextView2;
+        public TextView mPlace;
+        public TextView mUsername;
+        public TextView mLastSeenTime;
+        public TextView mGroup;
+        public TextView mValue;
 
         public UserRankingViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.rankingUserItemImageView);
-            mTextView1 = itemView.findViewById(R.id.rankingUserItemText1);
-            mTextView2 = itemView.findViewById(R.id.rankingUserItemText2);
+            mPlace = itemView.findViewById(R.id.rankingUserItemPlace);
+            mUsername = itemView.findViewById(R.id.rankingUserItemUsername);
+            mLastSeenTime = itemView.findViewById(R.id.rankingUserItemLastSeenTime);
+            mGroup = itemView.findViewById(R.id.rankingUserItemGroup);
+            mValue = itemView.findViewById(R.id.rankingUserItemValue);
         }
     }
 
@@ -47,8 +53,11 @@ public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.
         UserItem currentItem = mUserList.get(position);
 
         holder.mImageView.setImageResource(currentItem.getImageResource());
-        holder.mTextView1.setText(currentItem.getText1());
-        holder.mTextView2.setText(currentItem.getText2());
+        holder.mPlace.setText(String.valueOf(currentItem.getPlace()));
+        holder.mUsername.setText(currentItem.getUsername());
+        holder.mLastSeenTime.setText(currentItem.getLastSeenTime());
+        holder.mGroup.setText(currentItem.getGroup());
+        holder.mValue.setText(currentItem.getValue());
     }
 
     @Override

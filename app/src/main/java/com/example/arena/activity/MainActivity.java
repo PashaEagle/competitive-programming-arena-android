@@ -1,19 +1,17 @@
 package com.example.arena.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.arena.R;
-import com.example.arena.entity.UserItem;
 import com.example.arena.activity.fragement.AccountFragment;
 import com.example.arena.activity.fragement.RankFragment;
 import com.example.arena.activity.fragement.SettingsFragment;
-import com.example.arena.entity.UserRankingAdapter;
+import com.example.arena.dto.user.UserDto;
+import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;
+import com.example.arena.transformer.UserTransformer;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -24,12 +22,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    private CoreCommunicationService coreCommunicationService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
+        coreCommunicationService = new CoreCommunicationService(this);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -51,14 +49,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_account);
         }
-        UserSession.allUsers = new ArrayList<>();
-        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username1", "Some other item"));
-        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username2", "Some other item"));
-        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username3", "Some other item"));
-        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username4", "Some other item"));
-        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username5", "Some other item"));
-        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username6", "Some other item"));
 
+        UserSession.allUsers = coreCommunicationService.getAllUsersRequest();
+        UserSession.allUserItems = new ArrayList<>();
+
+        for (int i = 0; i < UserSession.allUsers.size(); ++i) {
+            UserDto userDto = UserSession.allUsers.get(i);
+            UserSession.allUserItems.add(UserTransformer.fromUserDtoToUserItem(userDto, i+1, userDto.getAge().toString()));
+        }
     }
 
     @Override

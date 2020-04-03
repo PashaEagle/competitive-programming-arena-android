@@ -9,5 +9,11 @@ import java.util.List;
 public final class UserSession {
 
     public static UserDto loggedUser;
-    public static ArrayList<UserItem> allUsers;
+    public static ArrayList<UserDto> allUsers;
+    public static ArrayList<UserItem> allUserItems;
+
+    static {
+        allUsers = new ArrayList<>();
+        allUserItems = new ArrayList<>();
+    }
 }

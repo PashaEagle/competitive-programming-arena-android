@@ -26,7 +26,6 @@ public class RankFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<UserItem> userRankingList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,11 +38,9 @@ public class RankFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_rank, container, false);
 
-        userRankingList = UserSession.allUsers;
-
         recyclerView = rootView.findViewById(R.id.rankingRecyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
-        adapter = new UserRankingAdapter(userRankingList);
+        adapter = new UserRankingAdapter(UserSession.allUserItems);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
@@ -54,8 +51,8 @@ public class RankFragment extends Fragment {
     public void onResume() {
         super.onResume();
         ((MainActivity) getActivity()).setActionBarTitle("Ranking");
-        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username7", "Some other item"));
-        adapter.notifyDataSetChanged();
+//        UserSession.allUsers.add(new UserItem(R.drawable.ic_rank, "Username7", "Some other item"));
+//        adapter.notifyDataSetChanged();
     }
 
     @Override
