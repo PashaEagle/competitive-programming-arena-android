@@ -1,15 +1,20 @@
-package com.example.arena;
+package com.example.arena.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.arena.fragement.AccountFragment;
-import com.example.arena.fragement.RankFragment;
-import com.example.arena.fragement.SettingsFragment;
+import com.example.arena.R;
+import com.example.arena.activity.fragement.AccountFragment;
+import com.example.arena.activity.fragement.RankFragment;
+import com.example.arena.activity.fragement.SettingsFragment;
+import com.example.arena.dto.user.UserDto;
+import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;
+import com.example.arena.transformer.UserTransformer;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,6 +26,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    private CoreCommunicationService coreCommunicationService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
+        coreCommunicationService = new CoreCommunicationService(this);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -41,6 +48,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AccountFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_account);
+        }
+
+        UserSession.allUsers = coreCommunicationService.getAllUsersRequest();
+        UserSession.allUserItems = new ArrayList<>();
+
+        for (int i = 0; i < UserSession.allUsers.size(); ++i) {
+            UserDto userDto = UserSession.allUsers.get(i);
+            UserSession.allUserItems.add(UserTransformer.fromUserDtoToUserItem(userDto, i+1, userDto.getAge().toString()));
         }
     }
 
@@ -76,5 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
     }
 }

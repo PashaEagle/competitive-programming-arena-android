@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".activity.LoginActivity">
 
     <Button
         android:id="@+id/bLogin2"
@@ -27,7 +27,7 @@
         android:ems="10"
         android:hint="username"
         android:inputType="textPersonName"
-        android:text="test"
+        android:text="pasha"
         app:layout_constraintBottom_toTopOf="@+id/editLoginPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -42,7 +42,7 @@
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
-        android:text="pass"
+        android:text="123"
         app:layout_constraintBottom_toTopOf="@+id/bLogin2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDto {
 
+    private String email;
     private String username;
     private String password;
     private String fullName;
@@ -21,4 +22,5 @@ public class UserDto {
     private Role role;
     private Long lastActiveAt;
     private String codeForcesUsername;
+    private String codeWarsUsername;
 }

@@ -1,4 +1,4 @@
-package com.example.arena;
+package com.example.arena.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.arena.R;
 import com.example.arena.dto.user.UserDto;
 import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;
@@ -35,11 +36,10 @@ public class LoginActivity extends AppCompatActivity {
 
     public void onButtonLoginClick(View v) throws JSONException {
 
-        String url = getString(R.string.login_url);
-        String username = editUsername.getText().toString();
+        String loginString = editUsername.getText().toString();
         String password = editPassword.getText().toString();
 
-        UserDto userDto = coreCommunicationService.sendLoginRequest(url, username, password);
+        UserDto userDto = coreCommunicationService.sendLoginRequest(loginString, password);
         if (userDto == null)
             return;
 

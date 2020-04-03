@@ -14,6 +14,6 @@ import lombok.Setter;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class LoginHttpRequest {
 
-    private String username;
+    private String loginString;
     private String password;
 }
