@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources
-    [
-        <!ENTITY core_host "http://192.168.1.109:7777">
-        <!ENTITY author "MrGreen">
-    ]
->
+    [<!ENTITY core_host "http://192.168.1.109:7777"><!ENTITY author "MrGreen">]
+    >
 
 <resources>
     //App name
@@ -28,8 +25,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="numbers">
         <item>PI-162</item>
         <item>PI-172</item>

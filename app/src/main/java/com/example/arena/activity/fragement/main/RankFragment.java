@@ -1,14 +1,18 @@
-package com.example.arena.activity.fragement;
+package com.example.arena.activity.fragement.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.arena.R;
+import com.example.arena.activity.LoginActivity;
 import com.example.arena.activity.MainActivity;
+import com.example.arena.dto.user.UserDto;
 import com.example.arena.entity.UserItem;
 import com.example.arena.entity.UserRankingAdapter;
 import com.example.arena.singleton.UserSession;
@@ -24,7 +28,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class RankFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private UserRankingAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -41,9 +45,20 @@ public class RankFragment extends Fragment {
         recyclerView = rootView.findViewById(R.id.rankingRecyclerView);
         layoutManager = new LinearLayoutManager(getActivity());
         adapter = new UserRankingAdapter(UserSession.allUserItems);
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
+        //TODO
+        adapter.setOnUserItemClickListener(new UserRankingAdapter.OnUserItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                UserDto currentUser = UserSession.allUsers.get(position);
+                Intent intent = new Intent(".UserPageActivity");
+                startActivity(intent);
+                Toast.makeText(getActivity(), "Page for " + currentUser.getUsername(), Toast.LENGTH_SHORT).show();
+            }
+        });
         return rootView;
     }
 

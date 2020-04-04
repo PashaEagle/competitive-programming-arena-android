@@ -5,9 +5,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.arena.R;
-import com.example.arena.activity.fragement.AccountFragment;
-import com.example.arena.activity.fragement.RankFragment;
-import com.example.arena.activity.fragement.SettingsFragment;
+import com.example.arena.activity.fragement.main.AccountFragment;
+import com.example.arena.activity.fragement.main.RankFragment;
+import com.example.arena.activity.fragement.main.SettingsFragment;
 import com.example.arena.dto.user.UserDto;
 import com.example.arena.integration.CoreCommunicationService;
 import com.example.arena.singleton.UserSession;

@@ -1,4 +1,4 @@
-package com.example.arena.activity.fragement;
+package com.example.arena.activity.fragement.main;
 
 import android.content.Intent;
 import android.os.Bundle;

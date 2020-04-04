@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.UserPageActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/userPageTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="scrollable">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/userPageTabGlobal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Global"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/userPageTabCodeforces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Codeforces"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/userPageTabCodewars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Codewars"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/userPageTabHackerrank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hackerrank"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/userPageTabHackerEarth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hackerearth"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/userPageViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF7347">
+
+    </androidx.viewpager.widget.ViewPager>
+    
+</LinearLayout>

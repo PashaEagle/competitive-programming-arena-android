@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".activity.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,9 +41,16 @@
         </activity>
         <activity android:name=".activity.EditAccountActivity">
             <intent-filter>
-            <action android:name=".EditAccountActivity" />
+                <action android:name=".EditAccountActivity" />
 
-            <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.UserPageActivity">
+            <intent-filter>
+                <action android:name=".UserPageActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

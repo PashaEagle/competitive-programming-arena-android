@@ -11,6 +11,7 @@ public final class UserSession {
     public static UserDto loggedUser;
     public static ArrayList<UserDto> allUsers;
     public static ArrayList<UserItem> allUserItems;
+    public static UserDto currentUser;
 
     static {
         allUsers = new ArrayList<>();
