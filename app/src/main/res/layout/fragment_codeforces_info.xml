@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tUserCodeforcesPageLastOnlineAt"
-                android:text="Submissions last month: "
+                android:text="Submissions: "
                 android:textSize="20sp" />
         </RelativeLayout>
     </ScrollView>

@@ -22,6 +22,8 @@ public class UserDto {
     private Role role;
     private Long lastActiveAt;
 
+    private GlobalData globalData;
+
     private String codeForcesUsername;
     private CodeForcesData codeForcesData;
 

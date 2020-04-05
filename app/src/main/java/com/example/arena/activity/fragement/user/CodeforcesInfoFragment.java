@@ -62,10 +62,11 @@ public class CodeforcesInfoFragment extends Fragment {
         tUserCodeforcesPageSubmissionsCount = view.findViewById(R.id.tUserCodeforcesPageSubmissionsCount);
 
         tUserCodeforcesPageUsername.append(UserSession.currentUser.getCodeForcesUsername());
-        tUserCodeforcesPageRank.append(UserSession.currentUser.getCodeForcesData().getRank());
+        if (UserSession.currentUser.getCodeForcesData().getRank() != null){
+            tUserCodeforcesPageRank.append(UserSession.currentUser.getCodeForcesData().getRank());
         tUserCodeforcesPageMaxRank.append(UserSession.currentUser.getCodeForcesData().getMaxRank());
         tUserCodeforcesPageRating.append(UserSession.currentUser.getCodeForcesData().getRating().toString());
-        tUserCodeforcesPageMaxRating.append(UserSession.currentUser.getCodeForcesData().getMaxRating().toString());
+        tUserCodeforcesPageMaxRating.append(UserSession.currentUser.getCodeForcesData().getMaxRating().toString());}
         tUserCodeforcesPageRegisteredAt.append(LocalDateTime.ofInstant(Instant.ofEpochSecond(UserSession.currentUser.getCodeForcesData().getRegisteredAt()),
                 ZoneId.systemDefault()).toString());
         tUserCodeforcesPageLastOnlineAt.append(LocalDateTime.ofInstant(Instant.ofEpochSecond(UserSession.currentUser.getCodeForcesData().getLastOnlineAt()),
