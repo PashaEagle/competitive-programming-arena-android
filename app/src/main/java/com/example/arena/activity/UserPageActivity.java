@@ -71,4 +71,8 @@ public class UserPageActivity extends AppCompatActivity {
         System.out.println();
 //        tabLayout.setupWithViewPager(viewPager);
     }
+
+    public void setActionBarTitle(String title) {
+        getSupportActionBar().setTitle(title);
+    }
 }

@@ -3,23 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:alpha="1"
+    app:cardBackgroundColor="@color/colorBgColor"
     app:cardCornerRadius="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="4dp">
-
-        <TextView
-            android:id="@+id/rankingUserItemPlace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="№"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/rankingUserItemImageView"
@@ -28,51 +19,63 @@
             android:layout_marginStart="30dp"
             android:padding="2dp" />
 
+        <TextView
+            android:id="@+id/rankingUserItemPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:alpha="1"
+            android:gravity="center"
+            android:text="№"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/rankingUserItemUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="username"
+            android:layout_alignParentTop="true"
             android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/rankingUserItemImageView"
+            android:text="username"
             android:textColor="@color/cardview_dark_background"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@id/rankingUserItemImageView"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/rankingUserItemLastSeenTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/rankingUserItemUsername"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/rankingUserItemImageView"
             android:text="last seen time"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="15sp"
-            android:layout_below="@id/rankingUserItemUsername"
-            android:layout_toEndOf="@id/rankingUserItemImageView"
-            android:layout_marginStart="8dp"/>
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/rankingUserItemGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/rankingUserItemLastSeenTime"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/rankingUserItemImageView"
             android:text="group"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="15sp"
-            android:layout_below="@id/rankingUserItemLastSeenTime"
-            android:layout_toEndOf="@id/rankingUserItemImageView"
-            android:layout_marginStart="8dp"/>
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/rankingUserItemValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/rankingUserItemGroup"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/rankingUserItemImageView"
             android:text="value"
             android:textColor="@color/cardview_dark_background"
-            android:textSize="15sp"
-            android:layout_below="@id/rankingUserItemGroup"
-            android:layout_toEndOf="@id/rankingUserItemImageView"
-            android:layout_marginStart="8dp"/>
+            android:textSize="15sp" />
 
     </RelativeLayout>
 

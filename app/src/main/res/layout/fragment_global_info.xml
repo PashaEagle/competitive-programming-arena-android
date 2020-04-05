@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E41616"
-    tools:context=".activity.fragement.user.GlobalInfoFragment">
+    tools:context=".activity.fragement.user.GlobalInfoFragment"
+    android:background="@color/colorBgColor">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
