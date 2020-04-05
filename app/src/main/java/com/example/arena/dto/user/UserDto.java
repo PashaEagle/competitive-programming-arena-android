@@ -26,4 +26,5 @@ public class UserDto {
     private CodeForcesData codeForcesData;
 
     private String codeWarsUsername;
+    private CodeWarsData codeWarsData;
 }

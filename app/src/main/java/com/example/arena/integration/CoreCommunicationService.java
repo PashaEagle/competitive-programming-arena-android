@@ -165,6 +165,24 @@ public class CoreCommunicationService {
         }
     }
 
+    public boolean checkCodewarsUsernameExists(String username) {
+
+        String url = context.getString(R.string.check_codewars_username_url) + "?username=" + username;
+        try {
+            ResponseEntity<Boolean> response = restTemplate.getForEntity(url, Boolean.class);
+            if (response.getBody().equals(false))
+                Toast.makeText(context, "This codewars username not exist", Toast.LENGTH_SHORT).show();
+            System.out.println(response.getStatusCode());
+            System.out.println(response.getBody());
+
+            return response.getBody();
+        } catch (Exception e) {
+            System.out.println("Error when sending check codewars username exists request. Message = " + e.getMessage());
+            Toast.makeText(context, "Error when sending request to check codewars username exists..", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
     public UserDto getCodeforcesUserData(String username) {
 
         String url = context.getString(R.string.get_codeforces_user_data_url) + "?username=" + username;

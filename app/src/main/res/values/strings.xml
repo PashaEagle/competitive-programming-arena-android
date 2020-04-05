@@ -17,6 +17,7 @@
     <string name="update_account_data_url">&core_host;/api/user/update</string>
     <string name="check_username_exists_url">&core_host;/api/user/exists</string>
     <string name="check_codeforces_username_url">&core_host;/api/codeforces/exists</string>
+    <string name="check_codewars_username_url">&core_host;/api/codewars/exists</string>
     <string name="get_codeforces_user_data_url">&core_host;/api/codeforces/user</string>
 
     //Other
