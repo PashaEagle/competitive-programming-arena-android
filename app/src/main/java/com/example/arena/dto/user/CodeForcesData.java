@@ -1,6 +1,5 @@
 package com.example.arena.dto.user;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -12,15 +11,15 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CodeforcesData {
+public class CodeForcesData {
 
     private String username;
     private String rank;
     private String maxRank;
     private Integer rating;
     private Integer maxRating;
-    private LocalDateTime lastOnlineAt;
-    private LocalDateTime registeredAt;
+    private Long lastOnlineAt;
+    private Long registeredAt;
     private Integer submissionsCount;
-    List<CodeforcesSubmission> submissions;
+    List<CodeForcesSubmission> last30Submissions;
 }

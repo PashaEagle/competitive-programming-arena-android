@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources
-    [<!ENTITY core_host "http://192.168.1.109:7777"><!ENTITY author "MrGreen">]
+    [<!ENTITY core_host "http://192.168.1.109:7777">]
     >
 
 <resources>
@@ -16,7 +16,8 @@
     <string name="all_users_url">&core_host;/api/user/all</string>
     <string name="update_account_data_url">&core_host;/api/user/update</string>
     <string name="check_username_exists_url">&core_host;/api/user/exists</string>
-    <string name="check_codeforces_username_url">&core_host;/api/codeforces/exists/username</string>
+    <string name="check_codeforces_username_url">&core_host;/api/codeforces/exists</string>
+    <string name="get_codeforces_user_data_url">&core_host;/api/codeforces/user</string>
 
     //Other
     <string name="empty_field_hint">not set</string>

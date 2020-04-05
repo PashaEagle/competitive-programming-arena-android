@@ -54,6 +54,7 @@ public class RankFragment extends Fragment {
             @Override
             public void onItemClick(int position) {
                 UserDto currentUser = UserSession.allUsers.get(position);
+                UserSession.currentUserUsername = currentUser.getUsername();
                 Intent intent = new Intent(".UserPageActivity");
                 startActivity(intent);
                 Toast.makeText(getActivity(), "Page for " + currentUser.getUsername(), Toast.LENGTH_SHORT).show();

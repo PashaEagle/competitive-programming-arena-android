@@ -4,8 +4,16 @@ import android.os.Bundle;
 
 import com.example.arena.R;
 import com.example.arena.entity.PageAdapter;
+import com.example.arena.integration.CoreCommunicationService;
+import com.example.arena.singleton.UserSession;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneId;
+
+import java.util.TimeZone;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
@@ -16,12 +24,14 @@ public class UserPageActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private TabItem tabGlobal, tabCodeforces, tabCodewars, tabHackerRank, tabHackerEarth;
+    private CoreCommunicationService coreCommunicationService;
 
     public PageAdapter pageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.coreCommunicationService = new CoreCommunicationService(this);
         setContentView(R.layout.activity_user_page);
 
         tabLayout = findViewById(R.id.userPageTabLayout);
@@ -55,6 +65,10 @@ public class UserPageActivity extends AppCompatActivity {
         });
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        UserSession.currentUser = coreCommunicationService.getCodeforcesUserData(UserSession.currentUserUsername);
+        System.out.println("CONVERTED TIME = " + LocalDateTime.ofInstant(Instant.ofEpochSecond(1586070657L),
+                ZoneId.systemDefault()));
+        System.out.println();
 //        tabLayout.setupWithViewPager(viewPager);
     }
 }

@@ -21,6 +21,9 @@ public class UserDto {
     private String group;
     private Role role;
     private Long lastActiveAt;
+
     private String codeForcesUsername;
+    private CodeForcesData codeForcesData;
+
     private String codeWarsUsername;
 }
