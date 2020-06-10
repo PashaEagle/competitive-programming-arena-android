@@ -1,24 +1,22 @@
 package com.example.arena.activity.fragement.user;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.arena.R;
-import com.example.arena.activity.MainActivity;
 import com.example.arena.activity.UserPageActivity;
 import com.example.arena.singleton.UserSession;
 
 import org.threeten.bp.Instant;
 import org.threeten.bp.LocalDateTime;
 import org.threeten.bp.ZoneId;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +31,7 @@ public class CodeforcesInfoFragment extends Fragment {
     private TextView tUserCodeforcesPageRegisteredAt;
     private TextView tUserCodeforcesPageLastOnlineAt;
     private TextView tUserCodeforcesPageSubmissionsCount;
+    private TextView tUserCodeforcesPageSubmissionsLastMonth;
 
     public CodeforcesInfoFragment() {
         // Required empty public constructor
@@ -60,17 +59,20 @@ public class CodeforcesInfoFragment extends Fragment {
         tUserCodeforcesPageRegisteredAt = view.findViewById(R.id.tUserCodeforcesPageRegisteredAt);
         tUserCodeforcesPageLastOnlineAt = view.findViewById(R.id.tUserCodeforcesPageLastOnlineAt);
         tUserCodeforcesPageSubmissionsCount = view.findViewById(R.id.tUserCodeforcesPageSubmissionsCount);
+        tUserCodeforcesPageSubmissionsLastMonth = view.findViewById(R.id.tUserCodeforcesPageSubmissionsLastMonth);
 
         tUserCodeforcesPageUsername.append(UserSession.currentUser.getCodeForcesUsername());
-        if (UserSession.currentUser.getCodeForcesData().getRank() != null){
+        if (UserSession.currentUser.getCodeForcesData().getRank() != null) {
             tUserCodeforcesPageRank.append(UserSession.currentUser.getCodeForcesData().getRank());
-        tUserCodeforcesPageMaxRank.append(UserSession.currentUser.getCodeForcesData().getMaxRank());
-        tUserCodeforcesPageRating.append(UserSession.currentUser.getCodeForcesData().getRating().toString());
-        tUserCodeforcesPageMaxRating.append(UserSession.currentUser.getCodeForcesData().getMaxRating().toString());}
+            tUserCodeforcesPageMaxRank.append(UserSession.currentUser.getCodeForcesData().getMaxRank());
+            tUserCodeforcesPageRating.append(UserSession.currentUser.getCodeForcesData().getRating().toString());
+            tUserCodeforcesPageMaxRating.append(UserSession.currentUser.getCodeForcesData().getMaxRating().toString());
+        }
         tUserCodeforcesPageRegisteredAt.append(LocalDateTime.ofInstant(Instant.ofEpochSecond(UserSession.currentUser.getCodeForcesData().getRegisteredAt()),
                 ZoneId.systemDefault()).toString());
         tUserCodeforcesPageLastOnlineAt.append(LocalDateTime.ofInstant(Instant.ofEpochSecond(UserSession.currentUser.getCodeForcesData().getLastOnlineAt()),
                 ZoneId.systemDefault()).toString());
         tUserCodeforcesPageSubmissionsCount.append(UserSession.currentUser.getCodeForcesData().getSubmissionsCount().toString());
+        tUserCodeforcesPageSubmissionsLastMonth.append(String.valueOf(UserSession.currentUser.getCodeForcesData().getSubmissionsLastMonth().size()));
     }
 }

@@ -75,10 +75,10 @@ public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.
 
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mPlace.setText(String.valueOf(currentItem.getPlace()));
-        holder.mUsername.setText(currentItem.getUsername());
-        holder.mLastSeenTime.setText(currentItem.getLastSeenTime());
-        holder.mGroup.setText(currentItem.getGroup());
-        holder.mValue.setText(currentItem.getValue());
+        holder.mUsername.setText("Name: " + currentItem.getUsername());
+        holder.mLastSeenTime.setText("Total submissions: " + currentItem.getSubmissionsCount());
+        holder.mGroup.setText("Submissions this month: " + currentItem.getSubmissionsThisMonth());
+        holder.mValue.setText("Age: " + currentItem.getValue());
     }
 
     @Override

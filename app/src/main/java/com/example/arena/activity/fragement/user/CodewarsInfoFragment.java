@@ -10,10 +10,6 @@ import com.example.arena.R;
 import com.example.arena.activity.UserPageActivity;
 import com.example.arena.singleton.UserSession;
 
-import org.threeten.bp.Instant;
-import org.threeten.bp.LocalDateTime;
-import org.threeten.bp.ZoneId;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -29,6 +25,7 @@ public class CodewarsInfoFragment extends Fragment {
     private TextView tUserCodewarsPageRating;
     private TextView tUserCodewarsPageHonor;
     private TextView tUserCodewarsPageSubmissionsCount;
+    private TextView tUserCodewarsPageSubmissionsLastMonth;
 
     public CodewarsInfoFragment() {
         // Required empty public constructor
@@ -55,16 +52,19 @@ public class CodewarsInfoFragment extends Fragment {
         tUserCodewarsPageRating = view.findViewById(R.id.tUserCodewarsPageRating);
         tUserCodewarsPageHonor = view.findViewById(R.id.tUserCodewarsPageHonor);
         tUserCodewarsPageSubmissionsCount = view.findViewById(R.id.tUserCodewarsPageSubmissionsCount);
+        tUserCodewarsPageSubmissionsLastMonth = view.findViewById(R.id.tUserCodewarsPageSubmissionsLastMonth);
 
         tUserCodewarsPageUsername.append(UserSession.currentUser.getCodeWarsUsername());
         tUserCodewarsPageRank.append(UserSession.currentUser.getCodeWarsData().getRankName());
         if (UserSession.currentUser.getCodeWarsData().getFullname() != null)
             tUserCodewarsPageFullname.append(UserSession.currentUser.getCodeWarsData().getFullname());
         if (UserSession.currentUser.getCodeWarsData().getRankScore() != null)
-        tUserCodewarsPageRating.append(UserSession.currentUser.getCodeWarsData().getRankScore().toString());
+            tUserCodewarsPageRating.append(UserSession.currentUser.getCodeWarsData().getRankScore().toString());
         if (UserSession.currentUser.getCodeWarsData().getHonor() != null)
-        tUserCodewarsPageHonor.append(UserSession.currentUser.getCodeWarsData().getHonor().toString());
-        if (UserSession.currentUser.getCodeWarsData().getSubmissionsCount() != null)
-        tUserCodewarsPageSubmissionsCount.append(UserSession.currentUser.getCodeWarsData().getSubmissionsCount().toString());
+            tUserCodewarsPageHonor.append(UserSession.currentUser.getCodeWarsData().getHonor().toString());
+        if (UserSession.currentUser.getCodeWarsData().getSubmissionsCount() != null) {
+            tUserCodewarsPageSubmissionsCount.append(UserSession.currentUser.getCodeWarsData().getSubmissionsCount().toString());
+            tUserCodewarsPageSubmissionsLastMonth.append(String.valueOf(UserSession.currentUser.getCodeWarsData().getSubmissionsLastMonth().size()));
+        }
     }
 }

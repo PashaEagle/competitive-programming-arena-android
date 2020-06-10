@@ -21,5 +21,5 @@ public class CodeForcesData {
     private Long lastOnlineAt;
     private Long registeredAt;
     private Integer submissionsCount;
-    List<CodeForcesSubmission> last30Submissions;
+    List<CodeForcesSubmission> submissionsLastMonth;
 }

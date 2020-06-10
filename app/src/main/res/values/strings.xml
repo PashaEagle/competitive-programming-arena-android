@@ -37,4 +37,9 @@
         <item>PI-192</item>
     </string-array>
 
+    <string-array name="sort_fields">
+        <item>Total submissions</item>
+        <item>Submissions this month</item>
+    </string-array>
+
 </resources>

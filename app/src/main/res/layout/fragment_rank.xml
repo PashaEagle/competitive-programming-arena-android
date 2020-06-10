@@ -9,8 +9,16 @@
         android:id="@+id/rankingRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_below="@id/spinner"
         android:alpha="1"
         android:scrollbars="vertical" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:entries="@array/sort_fields"
+        android:spinnerMode="dialog" />
 
 </RelativeLayout>

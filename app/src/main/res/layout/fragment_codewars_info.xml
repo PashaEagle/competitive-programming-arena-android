@@ -69,6 +69,13 @@
                 android:layout_below="@id/tUserCodewarsPageHonor"
                 android:text="Submissions: "
                 android:textSize="20sp" />
+            <TextView
+                android:id="@+id/tUserCodewarsPageSubmissionsLastMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tUserCodewarsPageSubmissionsCount"
+                android:text="Submissions last month: "
+                android:textSize="20sp" />
         </RelativeLayout>
     </ScrollView>
 

@@ -25,7 +25,7 @@ public class CodeWarsData {
     private String rankColor;
     private Integer rankScore;
     private Integer submissionsCount;
-    private List<CodeWarsSubmission> submissions;
+    private List<CodeWarsSubmission> submissionsLastMonth;
 
     @Data
     @Builder
