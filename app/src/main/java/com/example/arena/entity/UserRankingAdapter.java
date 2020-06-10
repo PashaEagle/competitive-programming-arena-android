@@ -16,8 +16,17 @@ import androidx.recyclerview.widget.RecyclerView;
 public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.UserRankingViewHolder> {
 
     private ArrayList<UserItem> mUserList;
+    private OnUserItemClickListener userItemClickListener;
 
-    public static class UserRankingViewHolder extends RecyclerView.ViewHolder{
+    public interface OnUserItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnUserItemClickListener(OnUserItemClickListener listener) {
+        this.userItemClickListener = listener;
+    }
+
+    public static class UserRankingViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
         public TextView mPlace;
         public TextView mUsername;
@@ -25,7 +34,7 @@ public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.
         public TextView mGroup;
         public TextView mValue;
 
-        public UserRankingViewHolder(@NonNull View itemView) {
+        public UserRankingViewHolder(@NonNull View itemView, final OnUserItemClickListener listener) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.rankingUserItemImageView);
             mPlace = itemView.findViewById(R.id.rankingUserItemPlace);
@@ -33,6 +42,18 @@ public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.
             mLastSeenTime = itemView.findViewById(R.id.rankingUserItemLastSeenTime);
             mGroup = itemView.findViewById(R.id.rankingUserItemGroup);
             mValue = itemView.findViewById(R.id.rankingUserItemValue);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -44,7 +65,7 @@ public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.
     @Override
     public UserRankingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.ranking_user_item, parent, false);
-        UserRankingViewHolder urvh = new UserRankingViewHolder(v);
+        UserRankingViewHolder urvh = new UserRankingViewHolder(v, userItemClickListener);
         return urvh;
     }
 
@@ -54,10 +75,10 @@ public class UserRankingAdapter extends RecyclerView.Adapter<UserRankingAdapter.
 
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mPlace.setText(String.valueOf(currentItem.getPlace()));
-        holder.mUsername.setText(currentItem.getUsername());
-        holder.mLastSeenTime.setText(currentItem.getLastSeenTime());
-        holder.mGroup.setText(currentItem.getGroup());
-        holder.mValue.setText(currentItem.getValue());
+        holder.mUsername.setText("Name: " + currentItem.getUsername());
+        holder.mLastSeenTime.setText("Total submissions: " + currentItem.getSubmissionsCount());
+        holder.mGroup.setText("Submissions this month: " + currentItem.getSubmissionsThisMonth());
+        holder.mValue.setText("Age: " + currentItem.getValue());
     }
 
     @Override

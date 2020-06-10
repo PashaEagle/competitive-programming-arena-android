@@ -1,4 +1,4 @@
-package com.example.arena.activity.fragement;
+package com.example.arena.activity.fragement.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

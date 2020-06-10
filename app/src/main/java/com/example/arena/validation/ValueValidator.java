@@ -40,4 +40,10 @@ public class ValueValidator {
         if (codeforcesUsername.contains(" ")) return false;
         return coreCommunicationService.checkCodeforcesUsernameExists(codeforcesUsername);
     }
+
+    public boolean validateCodewarsUsername(String codewarsUsername) {
+        codewarsUsername = codewarsUsername.trim();
+        if (codewarsUsername.contains(" ")) return false;
+        return coreCommunicationService.checkCodewarsUsernameExists(codewarsUsername);
+    }
 }

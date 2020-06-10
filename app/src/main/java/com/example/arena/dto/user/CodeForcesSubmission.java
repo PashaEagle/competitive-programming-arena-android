@@ -5,15 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CodeforcesSubmission {
+public class CodeForcesSubmission {
 
-    LocalDateTime submittedAt;
+    Long submittedAt;
     String problemName;
     Integer problemRating;
     String verdict;

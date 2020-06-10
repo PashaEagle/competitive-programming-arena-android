@@ -3,15 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_dark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rankingRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/cardview_light_background"
-        android:scrollbars="vertical"
-        android:layout_marginTop="?attr/actionBarSize"/>
+        android:layout_below="@id/spinner"
+        android:alpha="1"
+        android:scrollbars="vertical" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:entries="@array/sort_fields"
+        android:spinnerMode="dialog" />
 
 </RelativeLayout>

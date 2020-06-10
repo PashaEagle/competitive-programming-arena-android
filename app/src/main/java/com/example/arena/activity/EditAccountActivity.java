@@ -211,6 +211,20 @@ public class EditAccountActivity extends AppCompatActivity {
             }
         }
 
+        //Codewars username
+        if (textInputChangeCodewarsUsername.getEditText().getText().length() == 0)
+            newCodewarsUsername = null;
+        else {
+            newCodewarsUsername = textInputChangeCodewarsUsername.getEditText().getText().toString();
+            System.out.println("+" + newCodewarsUsername);
+            if (valueValidator.validateCodewarsUsername(newCodewarsUsername)) {
+                textInputChangeCodewarsUsername.setError(null);
+            } else {
+                valid = false;
+                textInputChangeCodewarsUsername.setError("This codewars username not exist");
+            }
+        }
+
         return valid;
     }
 

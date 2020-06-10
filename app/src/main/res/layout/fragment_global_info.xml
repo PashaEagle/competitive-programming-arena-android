@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.fragement.user.GlobalInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/tUserGlobalPageImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/ic_person" />
+
+            <TextView
+                android:id="@+id/tUserGlobalPageTotalSubmissions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_below="@id/tUserGlobalPageImage"
+                android:text="Total submissions: " />
+
+            <TextView
+                android:id="@+id/tUserGlobalPageSubmissionsLastMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submissions last month: "
+                android:layout_below="@id/tUserGlobalPageTotalSubmissions"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>
