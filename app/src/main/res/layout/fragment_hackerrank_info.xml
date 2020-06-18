@@ -9,6 +9,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center"
+        android:text="@string/hello_blank_fragment"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextColor"
+        android:textSize="48sp"
+        android:textStyle="bold|italic" />
 
 </FrameLayout>

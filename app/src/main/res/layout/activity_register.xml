@@ -26,6 +26,8 @@
                     android:id="@+id/textInputRegisterEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true">
 
@@ -39,6 +41,8 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputRegisterUsername"
                     android:layout_width="match_parent"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true">
@@ -54,6 +58,8 @@
                     android:id="@+id/textInputRegisterFullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true">
 
@@ -69,6 +75,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -82,6 +90,8 @@
                     android:id="@+id/textInputRegisterPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true"
                     app:passwordToggleEnabled="true">
@@ -97,6 +107,8 @@
                     android:id="@+id/tRegisterGroupTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_marginTop="20dp"
                     android:text="Group" />
 
@@ -104,6 +116,8 @@
                     android:id="@+id/spinnerRegisterGroup"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:entries="@array/numbers"
                     android:spinnerMode="dialog" />
 

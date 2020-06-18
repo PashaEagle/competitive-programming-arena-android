@@ -14,35 +14,38 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/tUserCodeforcesPageImage"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_person" />
+                android:src="@drawable/ic_person_white" />
 
             <TextView
                 android:id="@+id/tUserCodeforcesPageUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textColor="@color/colorTextColor"
                 android:layout_toRightOf="@+id/tUserCodeforcesPageImage"
-                android:text="Handle: " />
+                android:text="Handle: "
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tUserCodeforcesPageRank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rank: "
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageImage"
+                android:text="Rank: "
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tUserCodeforcesPageMaxRank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageRank"
                 android:text="Max rank: "
                 android:textSize="20sp" />
@@ -51,6 +54,7 @@
                 android:id="@+id/tUserCodeforcesPageRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageMaxRank"
                 android:text="Rating: "
                 android:textSize="20sp" />
@@ -59,6 +63,7 @@
                 android:id="@+id/tUserCodeforcesPageMaxRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageRating"
                 android:text="Max rating: "
                 android:textSize="20sp" />
@@ -67,6 +72,7 @@
                 android:id="@+id/tUserCodeforcesPageRegisteredAt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageMaxRating"
                 android:text="Registered at: "
                 android:textSize="20sp" />
@@ -75,6 +81,7 @@
                 android:id="@+id/tUserCodeforcesPageLastOnlineAt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageRegisteredAt"
                 android:text="Last online: "
                 android:textSize="20sp" />
@@ -83,13 +90,16 @@
                 android:id="@+id/tUserCodeforcesPageSubmissionsCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageLastOnlineAt"
                 android:text="Submissions: "
                 android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/tUserCodeforcesPageSubmissionsLastMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodeforcesPageSubmissionsCount"
                 android:text="Submissions last month: "
                 android:textSize="20sp" />

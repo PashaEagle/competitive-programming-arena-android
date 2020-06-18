@@ -13,35 +13,38 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/tUserCodewarsPageImage"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/ic_person" />
+                android:src="@drawable/ic_person_white" />
 
             <TextView
                 android:id="@+id/tUserCodewarsPageUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textColor="@color/colorTextColor"
                 android:layout_toRightOf="@+id/tUserCodewarsPageImage"
-                android:text="Username: " />
+                android:text="Username: "
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tUserCodewarsPageRank"
                 android:layout_width="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_height="wrap_content"
-                android:text="Rank: "
                 android:layout_below="@id/tUserCodewarsPageImage"
+                android:text="Rank: "
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tUserCodewarsPageFullname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodewarsPageRank"
                 android:text="Full name: "
                 android:textSize="20sp" />
@@ -49,6 +52,7 @@
             <TextView
                 android:id="@+id/tUserCodewarsPageRating"
                 android:layout_width="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tUserCodewarsPageFullname"
                 android:text="Rating: "
@@ -58,6 +62,7 @@
                 android:id="@+id/tUserCodewarsPageHonor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodewarsPageRating"
                 android:text="Honor: "
                 android:textSize="20sp" />
@@ -66,13 +71,16 @@
                 android:id="@+id/tUserCodewarsPageSubmissionsCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodewarsPageHonor"
                 android:text="Submissions: "
                 android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/tUserCodewarsPageSubmissionsLastMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorTextColor"
                 android:layout_below="@id/tUserCodewarsPageSubmissionsCount"
                 android:text="Submissions last month: "
                 android:textSize="20sp" />

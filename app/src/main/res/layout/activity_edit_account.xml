@@ -36,6 +36,7 @@
                     android:layout_marginTop="10dp"
                     android:text="Personal data:"
                     android:textAlignment="center"
+                    android:textColor="@color/colorTextColor"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -45,10 +46,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:defaultFocusHighlightEnabled="false"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
                     android:focusedByDefault="false"
-                    android:defaultFocusHighlightEnabled="false"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -57,7 +60,8 @@
                         android:enabled="false"
                         android:focusable="false"
                         android:hint="Email"
-                        android:text="example@gmail.com" />
+                        android:text="example@gmail.com"
+                        android:textColor="@color/colorTextColor" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -66,13 +70,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Username"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/colorTextColor" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -80,6 +87,8 @@
                     android:id="@+id/textInputChangeFullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true">
 
@@ -87,6 +96,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Full name"
+                        android:textColor="@color/colorTextColor"
                         android:inputType="text" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,6 +105,8 @@
                     android:id="@+id/textInputChangeAge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true">
 
@@ -102,6 +114,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Age"
+                        android:textColor="@color/colorTextColor"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,6 +122,8 @@
                 <TextView
                     android:id="@+id/tChangeGroupTitle"
                     android:layout_width="match_parent"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_height="wrap_content"
                     android:text="Group" />
 
@@ -117,6 +132,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:entries="@array/numbers"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:spinnerMode="dialog" />
 
                 <TextView
@@ -126,6 +143,8 @@
                     android:layout_marginTop="10dp"
                     android:text="Password:"
                     android:textAlignment="center"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:textAllCaps="false"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -137,6 +156,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -152,6 +173,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     app:errorEnabled="true"
                     app:passwordToggleEnabled="true">
 
@@ -159,6 +182,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="New password"
+                        android:textColor="@color/colorTextColor"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -168,6 +192,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:text="Linked accounts:"
                     android:textAlignment="center"
                     android:textSize="18sp"
@@ -179,12 +205,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     app:errorEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Codeforces handle"
+                        android:textColor="@color/colorTextColor"
                         android:inputType="text"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -193,6 +222,8 @@
                     android:id="@+id/textInputChangeCodewarsUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorTextColor"
+                    android:textColorHint="@color/colorTextColor"
                     android:layout_marginTop="10dp"
                     app:errorEnabled="true">
 
@@ -201,6 +232,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Codewars username"
                         android:inputType="text"
+                        android:textColor="@color/colorTextColor"
                         android:layout_marginBottom="15dp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 

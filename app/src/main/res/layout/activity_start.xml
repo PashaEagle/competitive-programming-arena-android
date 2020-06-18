@@ -11,19 +11,21 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/colorTextColor"
+        android:textColorHint="@color/colorTextColor"
         android:gravity="center"
         android:text="@string/welcome_message"
         android:textAllCaps="false"
-        android:textColor="#0004D3"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonLoginActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/colorTextColor"
         android:onClick="onButtonLoginActivityClick"
         android:text="Login"
         android:visibility="visible" />
@@ -31,10 +33,11 @@
     <Button
         android:id="@+id/buttonRegisterActivity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="7dp"
+        android:background="@color/colorTextColor"
         android:onClick="onButtonRegisterActivityClick"
         android:text="Register" />
-
 
 
 </LinearLayout>

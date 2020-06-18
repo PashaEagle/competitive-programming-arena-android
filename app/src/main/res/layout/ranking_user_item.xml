@@ -27,7 +27,7 @@
             android:alpha="1"
             android:gravity="center"
             android:text="№"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/colorTextColor"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -40,7 +40,7 @@
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/rankingUserItemImageView"
             android:text="username"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/colorTextColor"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/rankingUserItemImageView"
             android:text="last seen time"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/colorTextColor"
             android:textSize="15sp" />
 
         <TextView
@@ -63,7 +63,7 @@
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/rankingUserItemImageView"
             android:text="group"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/colorTextColor"
             android:textSize="15sp" />
 
         <TextView
@@ -74,7 +74,7 @@
             android:layout_marginStart="8dp"
             android:layout_toEndOf="@id/rankingUserItemImageView"
             android:text="value"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/colorTextColor"
             android:textSize="15sp" />
 
     </RelativeLayout>

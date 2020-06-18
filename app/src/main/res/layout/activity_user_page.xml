@@ -12,37 +12,40 @@
         android:id="@+id/userPageTabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabMode="scrollable">
+        app:tabIndicatorColor="#FFFFFF"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="#FFFFFF"
+        app:tabTextColor="@color/colorTextColor">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/userPageTabGlobal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Global"/>
+            android:text="Global" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/userPageTabCodeforces"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Codeforces"/>
+            android:text="Codeforces" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/userPageTabCodewars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Codewars"/>
+            android:text="Codewars" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/userPageTabHackerrank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hackerrank"/>
+            android:text="Hackerrank" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/userPageTabHackerEarth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hackerearth"/>
+            android:text="Hackerearth" />
 
 
     </com.google.android.material.tabs.TabLayout>

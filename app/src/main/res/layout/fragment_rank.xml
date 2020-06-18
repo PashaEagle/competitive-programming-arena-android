@@ -5,20 +5,22 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/colorBgColor"
+        android:entries="@array/sort_fields"
+        android:spinnerMode="dialog" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rankingRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/spinner"
         android:alpha="1"
+        android:background="#C3000209"
         android:scrollbars="vertical" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:entries="@array/sort_fields"
-        android:spinnerMode="dialog" />
 
 </RelativeLayout>

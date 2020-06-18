@@ -8,6 +8,6 @@ public class UserTransformer {
 
     public static UserItem fromUserDtoToUserItem(UserDto userDto, int place, String value) {
 
-        return new UserItem(R.drawable.ic_person, place, userDto.getUsername(), userDto.getGlobalData().getTotalAmountOfSubmissions(), userDto.getGlobalData().getSubmissionsLastMonth(), value);
+        return new UserItem(R.drawable.ic_person_white, place, userDto.getUsername(), userDto.getGlobalData().getTotalAmountOfSubmissions(), userDto.getGlobalData().getSubmissionsLastMonth(), value);
     }
 }
